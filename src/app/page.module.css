@@ -22,12 +22,19 @@
   display: flex;
   flex: 1;
   width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items: stretch;
   justify-content: space-between;
   background-color: var(--foreground);
   padding: 120px 60px;
+}
+
+.flexpage {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: space-between;
+  min-height: 100%;
+  flex: 1;
 }
 
 .intro {
@@ -92,6 +99,41 @@ a.primary {
 
 a.secondary {
   border-color: var(--button-secondary-border);
+}
+
+.animelistflex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 24px;
+  justify-content: center;
+}
+
+.animecard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  justify-items: center;
+ 
+}
+
+.animeitem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+ 
+}
+
+.animeitem h1 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  color: var(--text-primary);
 }
 
 /* Enable hover only on non-touch devices */
