@@ -43,7 +43,7 @@ export default function Home() {
                 {anime && (
                 <>
                   <Image 
-                    src={anime.coverImage.medium}
+                    src={anime.coverImage.large}
                     alt={anime.title.english}
                     width={300}
                     height={300}
