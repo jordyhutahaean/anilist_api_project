@@ -1,0 +1,56 @@
+.floatingcardsarea {
+  display: flex;
+  gap: 16px;
+  height: 640px;            /* visible window height */
+  overflow: hidden;         /* cards disappear past the edges */
+  margin-top: 32px;
+
+  /* fade cards out at the top and bottom */
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 15%,
+    #000 85%,
+    transparent
+  );
+}
+
+.column {
+  flex: 1;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: scrollUp linear infinite;
+}
+
+.reverse {
+  animation-direction: reverse;
+}
+
+.card {
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@keyframes scrollUp {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+
+/* respect users who turn off motion */
+@media (prefers-reduced-motion: reduce) {
+  .track { animation: none; }
+}
